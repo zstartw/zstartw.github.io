@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="android," />
+  <meta name="keywords" content="AndroidId DeviceId," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Android中的一些重要概念之前对一些概念还是不清楚,这里重新整理了一下 Android应用程序应用程序是用户可以从Play Store安装或以其他方式下载到其设备的东西.该应用程序应该有一些用户界面,并且可能有其他代码设计为在后台工作（多任务） 编程语言绝大多数Android应用程序都是以Java编写的,但是也有其它的编程语言写的,如:  您可以使用C / C ++编写应用程序的部分内容,以提">
-<meta name="keywords" content="android">
+<meta name="description" content="跟踪应用程序安装第一次启动的时候,随机生成一个UUID,并创建一个文件来保存起来,也可以存相关安装的数据. 不用TelephonyManager.getDeviceId())的原因有两个:  不是手机:没有电话硬件的Wifi专用设备或音乐播放器没有这种唯一标识符 持久性：在具有此功能的设备上，它会持续存在设备数据擦除和出厂重置。目前还不清楚，在这种情况下，您的应用应该将此视为同一设备。 特权：它需">
+<meta name="keywords" content="AndroidId DeviceId">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android基础">
-<meta property="og:url" content="http://yoursite.com/2018/04/17/Key Android Concepts/index.html">
+<meta property="og:title" content="识别应用程序安装">
+<meta property="og:url" content="http://yoursite.com/2018/04/17/识别应用程序安装/index.html">
 <meta property="og:site_name" content="Android Blog">
-<meta property="og:description" content="Android中的一些重要概念之前对一些概念还是不清楚,这里重新整理了一下 Android应用程序应用程序是用户可以从Play Store安装或以其他方式下载到其设备的东西.该应用程序应该有一些用户界面,并且可能有其他代码设计为在后台工作（多任务） 编程语言绝大多数Android应用程序都是以Java编写的,但是也有其它的编程语言写的,如:  您可以使用C / C ++编写应用程序的部分内容,以提">
+<meta property="og:description" content="跟踪应用程序安装第一次启动的时候,随机生成一个UUID,并创建一个文件来保存起来,也可以存相关安装的数据. 不用TelephonyManager.getDeviceId())的原因有两个:  不是手机:没有电话硬件的Wifi专用设备或音乐播放器没有这种唯一标识符 持久性：在具有此功能的设备上，它会持续存在设备数据擦除和出厂重置。目前还不清楚，在这种情况下，您的应用应该将此视为同一设备。 特权：它需">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-17T03:49:00.959Z">
+<meta property="og:updated_time" content="2018-04-17T09:54:21.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android基础">
-<meta name="twitter:description" content="Android中的一些重要概念之前对一些概念还是不清楚,这里重新整理了一下 Android应用程序应用程序是用户可以从Play Store安装或以其他方式下载到其设备的东西.该应用程序应该有一些用户界面,并且可能有其他代码设计为在后台工作（多任务） 编程语言绝大多数Android应用程序都是以Java编写的,但是也有其它的编程语言写的,如:  您可以使用C / C ++编写应用程序的部分内容,以提">
+<meta name="twitter:title" content="识别应用程序安装">
+<meta name="twitter:description" content="跟踪应用程序安装第一次启动的时候,随机生成一个UUID,并创建一个文件来保存起来,也可以存相关安装的数据. 不用TelephonyManager.getDeviceId())的原因有两个:  不是手机:没有电话硬件的Wifi专用设备或音乐播放器没有这种唯一标识符 持久性：在具有此功能的设备上，它会持续存在设备数据擦除和出厂重置。目前还不清楚，在这种情况下，您的应用应该将此视为同一设备。 特权：它需">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/17/Key Android Concepts/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/17/识别应用程序安装/"/>
 
 
 
 
 
-  <title>Android基础 | Android Blog</title>
+  <title>识别应用程序安装 | Android Blog</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/Key Android Concepts/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/识别应用程序安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zstartw">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android基础</h1>
+          <h1 class="post-title" itemprop="name headline">识别应用程序安装</h1>
         
 
         <div class="post-meta">
@@ -302,7 +302,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T11:49:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T17:54:21+08:00">
                 2018-04-17
               </time>
             
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -362,35 +362,24 @@
       
 
       
-        <h3 id="Android中的一些重要概念"><a href="#Android中的一些重要概念" class="headerlink" title="Android中的一些重要概念"></a>Android中的一些重要概念</h3><p>之前对一些概念还是不清楚,这里重新整理了一下</p>
-<h3 id="Android应用程序"><a href="#Android应用程序" class="headerlink" title="Android应用程序"></a>Android应用程序</h3><p>应用程序是用户可以从Play Store安装或以其他方式下载到其设备的东西.该应用程序应该有一些用户界面,并且可能有其他代码设计为在后台工作（多任务）</p>
-<h3 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h3><p>绝大多数Android应用程序都是以Java编写的,但是也有其它的编程语言写的,如:</p>
+        <h3 id="跟踪应用程序安装"><a href="#跟踪应用程序安装" class="headerlink" title="跟踪应用程序安装"></a>跟踪应用程序安装</h3><p>第一次启动的时候,随机生成一个UUID,并创建一个文件来保存起来,也可以存相关安装的数据. 不用<a href="http://developer.android.com/reference/android/telephony/TelephonyManager.html#getDeviceId(" target="_blank" rel="noopener">TelephonyManager.getDeviceId()</a>)的原因有两个:</p>
 <ul>
-<li>您可以使用C / C ++编写应用程序的部分内容,以提升性能,移植现有代码库等</li>
-<li>您可以使用C / C ++编写整个应用程序,主要用于使用OpenGL for 3D动画的游戏</li>
-<li>您可以使用HTML,CSS和JavaScript编写应用程序的内容,使用工具将该材料打包到可通过Play商店和类似场所分发的Android应用程序中</li>
-<li>其它</li>
+<li>不是手机:没有电话硬件的Wifi专用设备或音乐播放器没有这种唯一标识符</li>
+<li>持久性：在具有此功能的设备上，它会持续存在设备数据擦除和出厂重置。目前还不清楚，在这种情况下，您的应用应该将此视为同一设备。</li>
+<li>特权：它需要READ_PHONE_STATE权限，如果您不使用或需要电话，这会很刺激</li>
+<li>错误：我们已经看到了一些生产型手机的实例，其中的实现有问题并返回垃圾，例如零或星号。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public class Installation &#123;</span><br><span class="line">    private static String sID = null;</span><br><span class="line">    private static final String INSTALLATION = &quot;INSTALLATION&quot;;</span><br><span class="line"></span><br><span class="line">    public synchronized static String id(Context context) &#123;</span><br><span class="line">        if (sID == null) &#123;</span><br><span class="line">            File installation = new File(context.getFilesDir(), INSTALLATION);</span><br><span class="line">            try &#123;</span><br><span class="line">                if (!installation.exists())</span><br><span class="line">                    writeInstallationFile(installation);</span><br><span class="line">                sID = readInstallationFile(installation);</span><br><span class="line">            &#125; catch (Exception e) &#123;</span><br><span class="line">                throw new RuntimeException(e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sID;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static String readInstallationFile(File installation) throws IOException &#123;</span><br><span class="line">        RandomAccessFile f = new RandomAccessFile(installation, &quot;r&quot;);</span><br><span class="line">        byte[] bytes = new byte[(int) f.length()];</span><br><span class="line">        f.readFully(bytes);</span><br><span class="line">        f.close();</span><br><span class="line">        return new String(bytes);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void writeInstallationFile(File installation) throws IOException &#123;</span><br><span class="line">        FileOutputStream out = new FileOutputStream(installation);</span><br><span class="line">        String id = UUID.randomUUID().toString();</span><br><span class="line">        out.write(id.getBytes());</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="操作系统版本和API级别"><a href="#操作系统版本和API级别" class="headerlink" title="操作系统版本和API级别"></a>操作系统版本和API级别</h3><p>大多数Android开发人员的API级别对于</p>
-<ul>
-<li>API Level 19（Android 4.4）</li>
-<li>API Level 21（Android 5.0）</li>
-<li>API Level 22（Android 5.1）</li>
-<li>API Level 23（Android 6.0）</li>
-<li>API Level 24（Android 7.0）</li>
-<li>API Level 25 (Android 7.1)</li>
-<li>API Level 26 (Android 8.0)</li>
-</ul>
-<h3 id="Dalvik和ART"><a href="#Dalvik和ART" class="headerlink" title="Dalvik和ART"></a>Dalvik和ART</h3><p>在Android方面,Dalvik和ART是虚拟机（VM）. 虚拟机被许多编程语言所使用,如Java,Perl和Smalltalk. Dalvik和ART的设计非常像Java VM,但是针对嵌入式Linux环境进行了优化<br>两者之间的差异在于Android 5.0及更高版本上使用了ART,而Dalvik则在旧设备上使用</p>
-<p>那么当某人写一个Android应用程序的时候真的会发生什么呢</p>
-<ol>
-<li>开发人员编写Java语法源代码,利用Android项目和第三方发布的类库.</li>
-<li>开发人员使用Java SDK附带的javac编译器将源代码编译为Java VM字节码.</li>
-<li>开发人员将Java VM字节码转换为Dalvik VM字节码,其中包含其他文件到.apk扩展名（APK文件）的ZIP档案中.</li>
-<li>Android设备或模拟器运行APK文件,导致字节码由Dalvik或ART VM的实例执行.</li>
-</ol>
-<p>从您的角度来看,大多数构建工具都被隐藏. 您在第一步输入Java源代码,并在最后输出APK文件.</p>
-<h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><p>当您的应用程序运行时,它将在自己的进程中执行. 这与其他传统操作系统没有什么不同. Dalvik的一部分魔法使许多进程可以一次运行许多Android应用程序,而不会消耗大量的RAM<br>Android还将为您的应用程序设置一批线程. 您的代码将被执行的线程大部分时间被不同地称为“主应用程序线程”或“UI线程”</p>
+<p>返回的格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7bebb30f-fb61-429e-9022-2caf57f55efa</span><br></pre></td></tr></table></figure></p>
+<h3 id="Mac-Address"><a href="#Mac-Address" class="headerlink" title="Mac Address"></a>Mac Address</h3><p>可以从设备的WiFi或蓝牙硬件中检索Mac地址。我们不建议将此用作唯一标识符。首先，并非所有设备都具有WiFi。另外，如果WiFi未打开，硬件可能不会报告Mac地址。<br>Android M 开始，无法再通过第三方 API 获得本地设备 MAC 地址（例如，WLAN 和蓝牙）。WifiInfo.getMacAddress() 方法和 BluetoothAdapter.getDefaultAdapter().getAddress() 方法都会返回 02:00:00:00:00:00。<br>此外，您还必须拥有下列权限，才能获取通过蓝牙和 WLAN 扫描获得的附近外部设备的 MAC 地址：</p>
+<p>此外，还必须获取权限，才能获取通过蓝牙和 WLAN 扫描获得的附近外部设备的 MAC 地址：</p>
+<h3 id="Serial-Number"><a href="#Serial-Number" class="headerlink" title="Serial Number"></a>Serial Number</h3><p>由于Android 2.3（“姜饼”），这是可以通过android.os.Build.SERIAL。没有电话的设备需要在这里报告唯一的设备ID;有些手机也可能这样做。</p>
+<h3 id="ANDROID-ID"><a href="#ANDROID-ID" class="headerlink" title="ANDROID_ID"></a>ANDROID_ID</h3><p>更具体地说，Settings.Secure.ANDROID_ID。这是设备第一次引导时生成并存储的64位数量。设备被擦拭时会重置。</p>
+<p>ANDROID_ID似乎是唯一设备标识符的不错选择。有缺点：首先，它在2.2之前的Android版本（“Froyo”）上不是100％可靠的。</p>
+<p>ANDROID_ID似乎是唯一设备标识符的不错选择。有缺点：首先，它在2.2之前的Android版本（“Froyo”）上不是100％可靠的。此外，主流制造商的流行手机中至少有一个广泛观察到的错误，其中每个实例具有相同的ANDROID_ID。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String android_id = Settings.Secure.getString(mContext.getContentResolver(),</span><br><span class="line">                Settings.Secure.ANDROID_ID);</span><br></pre></td></tr></table></figure>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>避免识别特定设备的尝试有很多很好的理由。对于那些想要尝试的人来说，最好的方法可能是在任何合理现代的情况下使用ANDROID_ID</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://android-developers.googleblog.com/2011/03/identifying-app-installations.html" target="_blank" rel="noopener">Android Developers Blog</a></p>
 
       
     </div>
@@ -408,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/android/" rel="tag"># android</a>
+            <a href="/tags/AndroidId-DeviceId/" rel="tag"># AndroidId DeviceId</a>
           
         </div>
       
@@ -421,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/17/Gradle and Manifest/" rel="next" title="Gradle和Manifest">
-                <i class="fa fa-chevron-left"></i> Gradle和Manifest
+              <a href="/2018/04/17/关于设备的相关信息/" rel="next" title="关于设备的相关信息">
+                <i class="fa fa-chevron-left"></i> 关于设备的相关信息
               </a>
             
           </div>
@@ -430,10 +419,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/17/key Java Concepts/" rel="prev" title="Java基础知识">
-                Java基础知识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -575,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android中的一些重要概念"><span class="nav-number">1.</span> <span class="nav-text">Android中的一些重要概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android应用程序"><span class="nav-number">2.</span> <span class="nav-text">Android应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编程语言"><span class="nav-number">3.</span> <span class="nav-text">编程语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统版本和API级别"><span class="nav-number">4.</span> <span class="nav-text">操作系统版本和API级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dalvik和ART"><span class="nav-number">5.</span> <span class="nav-text">Dalvik和ART</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程和线程"><span class="nav-number">6.</span> <span class="nav-text">进程和线程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#跟踪应用程序安装"><span class="nav-number">1.</span> <span class="nav-text">跟踪应用程序安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac-Address"><span class="nav-number">2.</span> <span class="nav-text">Mac Address</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Serial-Number"><span class="nav-number">3.</span> <span class="nav-text">Serial Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ANDROID-ID"><span class="nav-number">4.</span> <span class="nav-text">ANDROID_ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">5.</span> <span class="nav-text">结论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
