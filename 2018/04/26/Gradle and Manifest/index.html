@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="android," />
+  <meta name="keywords" content="Gradle Manifest Android," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Android中的一些重要概念之前对一些概念还是不清楚,这里重新整理了一下 Android应用程序应用程序是用户可以从Play Store安装或以其他方式下载到其设备的东西.该应用程序应该有一些用户界面,并且可能有其他代码设计为在后台工作（多任务） 编程语言绝大多数Android应用程序都是以Java编写的,但是也有其它的编程语言写的,如:  您可以使用C / C ++编写应用程序的部分内容,以提">
-<meta name="keywords" content="android">
+<meta name="description" content="Gradle是什么Gradle是用于构建软件的软件,也称为“构建自动化软件”或“构建系统”.您可能在其他环境中使用其他构建系统,例如make（C / C ++）,rake（Ruby）,Ant（Java）,Maven（Java） 这些工具通过您教授他们的内在功能和规则知道 - 如何确定需要创建的内容（例如,基于文件更改）以及如何创建它们. 构建系统不直接编译,链接,打包等应用程序,而是指示单独的编译">
+<meta name="keywords" content="Gradle Manifest Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android基础">
-<meta property="og:url" content="http://yoursite.com/2018/04/17/Key Android Concepts/index.html">
+<meta property="og:title" content="Gradle和Manifest">
+<meta property="og:url" content="http://yoursite.com/2018/04/26/Gradle and Manifest/index.html">
 <meta property="og:site_name" content="Android Blog">
-<meta property="og:description" content="Android中的一些重要概念之前对一些概念还是不清楚,这里重新整理了一下 Android应用程序应用程序是用户可以从Play Store安装或以其他方式下载到其设备的东西.该应用程序应该有一些用户界面,并且可能有其他代码设计为在后台工作（多任务） 编程语言绝大多数Android应用程序都是以Java编写的,但是也有其它的编程语言写的,如:  您可以使用C / C ++编写应用程序的部分内容,以提">
+<meta property="og:description" content="Gradle是什么Gradle是用于构建软件的软件,也称为“构建自动化软件”或“构建系统”.您可能在其他环境中使用其他构建系统,例如make（C / C ++）,rake（Ruby）,Ant（Java）,Maven（Java） 这些工具通过您教授他们的内在功能和规则知道 - 如何确定需要创建的内容（例如,基于文件更改）以及如何创建它们. 构建系统不直接编译,链接,打包等应用程序,而是指示单独的编译">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-17T03:49:00.959Z">
+<meta property="og:updated_time" content="2018-04-26T10:34:39.312Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android基础">
-<meta name="twitter:description" content="Android中的一些重要概念之前对一些概念还是不清楚,这里重新整理了一下 Android应用程序应用程序是用户可以从Play Store安装或以其他方式下载到其设备的东西.该应用程序应该有一些用户界面,并且可能有其他代码设计为在后台工作（多任务） 编程语言绝大多数Android应用程序都是以Java编写的,但是也有其它的编程语言写的,如:  您可以使用C / C ++编写应用程序的部分内容,以提">
+<meta name="twitter:title" content="Gradle和Manifest">
+<meta name="twitter:description" content="Gradle是什么Gradle是用于构建软件的软件,也称为“构建自动化软件”或“构建系统”.您可能在其他环境中使用其他构建系统,例如make（C / C ++）,rake（Ruby）,Ant（Java）,Maven（Java） 这些工具通过您教授他们的内在功能和规则知道 - 如何确定需要创建的内容（例如,基于文件更改）以及如何创建它们. 构建系统不直接编译,链接,打包等应用程序,而是指示单独的编译">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/17/Key Android Concepts/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/26/Gradle and Manifest/"/>
 
 
 
 
 
-  <title>Android基础 | Android Blog</title>
+  <title>Gradle和Manifest | Android Blog</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/Key Android Concepts/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/Gradle and Manifest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zstartw">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android基础</h1>
+          <h1 class="post-title" itemprop="name headline">Gradle和Manifest</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T11:49:00+08:00">
-                2018-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T18:34:39+08:00">
+                2018-04-26
               </time>
             
 
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/Config/" itemprop="url" rel="index">
+                    <span itemprop="name">Config</span>
                   </a>
                 </span>
 
@@ -362,35 +362,37 @@
       
 
       
-        <h3 id="Android中的一些重要概念"><a href="#Android中的一些重要概念" class="headerlink" title="Android中的一些重要概念"></a>Android中的一些重要概念</h3><p>之前对一些概念还是不清楚,这里重新整理了一下</p>
-<h3 id="Android应用程序"><a href="#Android应用程序" class="headerlink" title="Android应用程序"></a>Android应用程序</h3><p>应用程序是用户可以从Play Store安装或以其他方式下载到其设备的东西.该应用程序应该有一些用户界面,并且可能有其他代码设计为在后台工作（多任务）</p>
-<h3 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h3><p>绝大多数Android应用程序都是以Java编写的,但是也有其它的编程语言写的,如:</p>
+        <h3 id="Gradle是什么"><a href="#Gradle是什么" class="headerlink" title="Gradle是什么"></a>Gradle是什么</h3><p>Gradle是用于构建软件的软件,也称为“构建自动化软件”或“构建系统”.<br>您可能在其他环境中使用其他构建系统,例如make（C / C ++）,rake（Ruby）,Ant（Java）,Maven（Java）</p>
+<p>这些工具通过您教授他们的内在功能和规则知道 - 如何确定需要创建的内容（例如,基于文件更改）以及如何创建它们. 构建系统不直接编译,链接,打包等应用程序,而是指示单独的编译器,链接器和打包程序来执行此操作.</p>
+<p>Gradle使用构建在Groovy上面的域专用语言（DSL）完成这些任务</p>
+<h3 id="Groovy-是什么"><a href="#Groovy-是什么" class="headerlink" title="Groovy 是什么"></a>Groovy 是什么</h3><p>有许多编程语言被设计为在Java VM之上运行,其中一些,如JRuby和Jython,分别是其他常用编程语言（Ruby和Python）的实现,<br>一种语言只对应一种,而Groovy是其中之一</p>
+<p>Groovy脚本看起来有点像Java和Ruby的混搭.与Java一样,Groovy支持</p>
 <ul>
-<li>您可以使用C / C ++编写应用程序的部分内容,以提升性能,移植现有代码库等</li>
-<li>您可以使用C / C ++编写整个应用程序,主要用于使用OpenGL for 3D动画的游戏</li>
-<li>您可以使用HTML,CSS和JavaScript编写应用程序的内容,使用工具将该材料打包到可通过Play商店和类似场所分发的Android应用程序中</li>
-<li>其它</li>
+<li>使用class关键字定义类</li>
+<li>使用extends创建子类</li>
+<li>使用导入从外部JAR导入类</li>
+<li>使用大括号定义方法体（{和}）</li>
+<li>对象是通过新的操作符创建的</li>
 </ul>
-<h3 id="操作系统版本和API级别"><a href="#操作系统版本和API级别" class="headerlink" title="操作系统版本和API级别"></a>操作系统版本和API级别</h3><p>大多数Android开发人员的API级别对于</p>
+<p>和Ruby一样</p>
+<p>语句可以是类的一部分,也可以简单地写成一种强制性的风格,如脚本语言<br>不输入参数和局部变量</p>
+<p>Groovy是一种解释型语言,如Ruby和Java不同. Groovy脚本通过执行groovy命令运行,将脚本传递给它来运行.<br>但是,Groovy运行时是一个Java JAR,需要一个JVM才能运行.<br>Groovy的优势之一是创建一个域专用语言（或DSL）. 例如,Gradle是用于进行软件构建的Groovy DSL.<br>特定于Gradle的能力似乎是一流的语言结构,通常与Groovy内在的功能无法区分.<br>然而,Groovy DSL主要是声明式的,就像一个XML文件.<br>在某种程度上,我们获得了两个世界的最佳效果：XML风格的定义（通常使用较少的标点符号）,但具有“到达Groovy”的能力,并根据需要进行自定义脚本编制.</p>
+<h3 id="Android和Gradle关系"><a href="#Android和Gradle关系" class="headerlink" title="Android和Gradle关系"></a>Android和Gradle关系</h3><p>Google已经发布了用于Gradle的Android插件,这使得Gradle能够构建Android项目. Google还在Android Studio中使用Gradle和Gradle作为Android Studio后台的构建系统.</p>
+<h3 id="为什么使用"><a href="#为什么使用" class="headerlink" title="为什么使用"></a>为什么使用</h3><p>最初,当我们构建一个应用程序时,这些构建是使用Eclipse和Ant完成的. Eclipse是IDE,而Ant是命令行工具.<br>Eclipse不使用Ant构建Android项目,而是拥有自己的构建系统. 而且我们使用这些工具成功地构建了一百万个应用程序. 这些工具今天仍然可以工作,尽管Ant的支持正在快速消失.</p>
+<p>那么为什么要改变？ 有几个因素,包括：</p>
 <ul>
-<li>API Level 19（Android 4.4）</li>
-<li>API Level 21（Android 5.0）</li>
-<li>API Level 22（Android 5.1）</li>
-<li>API Level 23（Android 6.0）</li>
-<li>API Level 24（Android 7.0）</li>
-<li>API Level 25 (Android 7.1)</li>
-<li>API Level 26 (Android 8.0)</li>
+<li>维护两个单独的构建系统（Ant和Eclipse的本地方法）变得耗时,随着Android Studio和另一个构建系统的出现,将会变得更加糟糕.<br>因此,Google希望基于Gradle,针对IDE和命令行方案的单一构建系统进行标准</li>
+<li>使用第三方库更方便</li>
 </ul>
-<h3 id="Dalvik和ART"><a href="#Dalvik和ART" class="headerlink" title="Dalvik和ART"></a>Dalvik和ART</h3><p>在Android方面,Dalvik和ART是虚拟机（VM）. 虚拟机被许多编程语言所使用,如Java,Perl和Smalltalk. Dalvik和ART的设计非常像Java VM,但是针对嵌入式Linux环境进行了优化<br>两者之间的差异在于Android 5.0及更高版本上使用了ART,而Dalvik则在旧设备上使用</p>
-<p>那么当某人写一个Android应用程序的时候真的会发生什么呢</p>
-<ol>
-<li>开发人员编写Java语法源代码,利用Android项目和第三方发布的类库.</li>
-<li>开发人员使用Java SDK附带的javac编译器将源代码编译为Java VM字节码.</li>
-<li>开发人员将Java VM字节码转换为Dalvik VM字节码,其中包含其他文件到.apk扩展名（APK文件）的ZIP档案中.</li>
-<li>Android设备或模拟器运行APK文件,导致字节码由Dalvik或ART VM的实例执行.</li>
-</ol>
-<p>从您的角度来看,大多数构建工具都被隐藏. 您在第一步输入Java源代码,并在最后输出APK文件.</p>
-<h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><p>当您的应用程序运行时,它将在自己的进程中执行. 这与其他传统操作系统没有什么不同. Dalvik的一部分魔法使许多进程可以一次运行许多Android应用程序,而不会消耗大量的RAM<br>Android还将为您的应用程序设置一批线程. 您的代码将被执行的线程大部分时间被不同地称为“主应用程序线程”或“UI线程”</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a href="https://gradle.org/install/" target="_blank" rel="noopener">Gradle下载页面</a>包含Gradle本身的ZIP存档的链接：二进制文件,源代码或两者.</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>有三部分组成</p>
+<ul>
+<li>批处理文件(gradlew.bat)和脚本代码(gradlew)</li>
+<li>用于批处理文件和脚本的jar包(gradle/wrapper)</li>
+<li>哪里下载gradle (gradle/wrapper/gradle-wrapper.properties)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#Wed Apr 10 15:27:10 PDT 2013</span><br><span class="line">distributionBase=GRADLE_USER_HOME</span><br><span class="line">distributionPath=wrapper/dists</span><br><span class="line">zipStoreBase=GRADLE_USER_HOME</span><br><span class="line">zipStorePath=wrapper/dists</span><br><span class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip</span><br></pre></td></tr></table></figure>
+<p>当您创建或导入项目时,或者如果您更改属性文件中引用的Gradle版本,Android Studio将下载distributionUrl属性指向的Gradle,<br>并将其安装到.gradle/ 在创建的项目目录下.该版本的Gradle将是Android Studio使用的版本.</p>
 
       
     </div>
@@ -408,7 +410,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/android/" rel="tag"># android</a>
+            <a href="/tags/Gradle-Manifest-Android/" rel="tag"># Gradle Manifest Android</a>
           
         </div>
       
@@ -421,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/17/Gradle and Manifest/" rel="next" title="Gradle和Manifest">
-                <i class="fa fa-chevron-left"></i> Gradle和Manifest
+              <a href="/2018/04/26/RXJava/" rel="next" title="RXJava">
+                <i class="fa fa-chevron-left"></i> RXJava
               </a>
             
           </div>
@@ -431,8 +433,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/17/key Java Concepts/" rel="prev" title="Java基础知识">
-                Java基础知识 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/26/hello hexo/" rel="prev" title="Hexo 基本配置">
+                Hexo 基本配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,7 +523,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -575,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android中的一些重要概念"><span class="nav-number">1.</span> <span class="nav-text">Android中的一些重要概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android应用程序"><span class="nav-number">2.</span> <span class="nav-text">Android应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编程语言"><span class="nav-number">3.</span> <span class="nav-text">编程语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统版本和API级别"><span class="nav-number">4.</span> <span class="nav-text">操作系统版本和API级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dalvik和ART"><span class="nav-number">5.</span> <span class="nav-text">Dalvik和ART</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程和线程"><span class="nav-number">6.</span> <span class="nav-text">进程和线程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradle是什么"><span class="nav-number">1.</span> <span class="nav-text">Gradle是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Groovy-是什么"><span class="nav-number">2.</span> <span class="nav-text">Groovy 是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android和Gradle关系"><span class="nav-number">3.</span> <span class="nav-text">Android和Gradle关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用"><span class="nav-number">4.</span> <span class="nav-text">为什么使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">5.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构"><span class="nav-number">6.</span> <span class="nav-text">结构</span></a></li></ol></div>
             
 
           </div>
