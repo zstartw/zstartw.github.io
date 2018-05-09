@@ -392,17 +392,17 @@
 <h3 id="一些系统设置"><a href="#一些系统设置" class="headerlink" title="一些系统设置"></a>一些系统设置</h3><ul>
 <li>设置环境变量<br>进入系统管理-系统设置-全局属性,新建变量 ANDROID_HOME=/home/自己的用户名/android-sdk</li>
 <li>设置Build History输出格式<br>进入系统管理-全局安全配置-Markup Formatter,设置markup fromatter为Safe HTML,格式化Build History有用到</li>
-<li><p>设置JDK, Gradle<br>进入系统管理-全局工具配置-JDK,添加 java_1.8=/usr/lib/jvm/java-8-openjdk-amd64/<br>进入系统管理-全局工具配置-Gradle,添加 gradle_4.4=/home/自己的用户名/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4</p>
-<h3 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h3></li>
-<li><p>输入任务名称-自己的工程名</p>
-</li>
+<li>设置JDK, Gradle<br>进入系统管理-全局工具配置-JDK,添加 java_1.8=/usr/lib/jvm/java-8-openjdk-amd64/<br>进入系统管理-全局工具配置-Gradle,添加 gradle_4.4=/home/自己的用户名/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4</li>
+</ul>
+<h3 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h3><ul>
+<li>输入任务名称-自己的工程名</li>
 <li>选择 “构建一个自由风格的软件项目”</li>
 </ul>
 <h3 id="配置工程"><a href="#配置工程" class="headerlink" title="配置工程"></a>配置工程</h3><ul>
-<li><p>参数化构建过程<br><img src="https://cloudinary.com/console/media_library/asset/image/upload/Screenshot_from_2018-05-09_17-12-42" alt=""></p>
-</li>
-<li><p>Git添加源代码</p>
-</li>
+<li>参数化构建过程<br><img src="https://res.cloudinary.com/dwg5tdqbq/image/upload/v1525857315/Screenshot_from_2018-05-09_17-12-42.png" alt=""></li>
+</ul>
+<ul>
+<li>Git添加源代码</li>
 </ul>
 <p>这里我使用 git ssh来导入代码,但是一直提示 “Permission denied”,后面直接使用 http,然后添加一下用户名和密码的方式就解决了</p>
 <ul>
@@ -421,7 +421,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure>
 <p>添加 Directory</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory /home/用户名/jenkins/workspace/工程名/archives/&gt;</span><br><span class="line">        Options Indexes FollowSymLinks MultiViews</span><br><span class="line">        AllowOverride None</span><br><span class="line">        Order allow,deny</span><br><span class="line">        allow from all</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
-<p>重启apache2</p>
+<ul>
+<li>重启apache2</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
 <ul>
 <li>修改apache端口号</li>
