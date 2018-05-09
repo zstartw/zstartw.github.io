@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Jenkins," />
 
 
 
@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="官网Hexo文档troubleshootingGitHub. 安装node.jsnode.js官网 安装Hexo1$ npm install hexo-cli -g Notes: Linux,Mac使用下面这个命令 1$ sudo npm install hexo-cli -g 创建工程123$ hexo init zstart.github.io$ cd zstart.github.io$ np">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="安装环境 安装Jenkins   官方下载安装  https://jenkins.io/  Jenkins启动/停止/重启  1234# 分别对应Jenkins的启动、停止、重启sudo service jenkins start/stop/restart# 设置Jenkins开机启动sudo chkconfig jenkins on  PHP+Apache  这里是想搭建一个文件服务器,方便后面">
+<meta name="keywords" content="Jenkins">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 基本配置">
-<meta property="og:url" content="http://yoursite.com/2018/04/26/hello hexo/index.html">
+<meta property="og:title" content="Jenkins搭建Android自动化打包">
+<meta property="og:url" content="http://yoursite.com/2018/05/09/Jenkins搭建Android自动化打包/index.html">
 <meta property="og:site_name" content="Android Blog">
-<meta property="og:description" content="官网Hexo文档troubleshootingGitHub. 安装node.jsnode.js官网 安装Hexo1$ npm install hexo-cli -g Notes: Linux,Mac使用下面这个命令 1$ sudo npm install hexo-cli -g 创建工程123$ hexo init zstart.github.io$ cd zstart.github.io$ np">
+<meta property="og:description" content="安装环境 安装Jenkins   官方下载安装  https://jenkins.io/  Jenkins启动/停止/重启  1234# 分别对应Jenkins的启动、停止、重启sudo service jenkins start/stop/restart# 设置Jenkins开机启动sudo chkconfig jenkins on  PHP+Apache  这里是想搭建一个文件服务器,方便后面">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-26T10:34:47.236Z">
+<meta property="og:image" content="https://cloudinary.com/console/media_library/asset/image/upload/Screenshot_from_2018-05-09_17-12-42">
+<meta property="og:image" content="http://res.cloudinary.com/dwg5tdqbq/image/upload/c_scale,w_517/v1525857794/Screenshot_from_2018-05-09_17-23-00.png">
+<meta property="og:image" content="http://res.cloudinary.com/dwg5tdqbq/image/upload/c_scale,w_358/v1525857941/Screenshot_from_2018-05-09_17-25-09.png">
+<meta property="og:image" content="http://res.cloudinary.com/dwg5tdqbq/image/upload/c_scale,w_670/v1525858266/Screenshot_from_2018-05-09_17-30-22.png">
+<meta property="og:updated_time" content="2018-05-09T09:48:33.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 基本配置">
-<meta name="twitter:description" content="官网Hexo文档troubleshootingGitHub. 安装node.jsnode.js官网 安装Hexo1$ npm install hexo-cli -g Notes: Linux,Mac使用下面这个命令 1$ sudo npm install hexo-cli -g 创建工程123$ hexo init zstart.github.io$ cd zstart.github.io$ np">
+<meta name="twitter:title" content="Jenkins搭建Android自动化打包">
+<meta name="twitter:description" content="安装环境 安装Jenkins   官方下载安装  https://jenkins.io/  Jenkins启动/停止/重启  1234# 分别对应Jenkins的启动、停止、重启sudo service jenkins start/stop/restart# 设置Jenkins开机启动sudo chkconfig jenkins on  PHP+Apache  这里是想搭建一个文件服务器,方便后面">
+<meta name="twitter:image" content="https://cloudinary.com/console/media_library/asset/image/upload/Screenshot_from_2018-05-09_17-12-42">
 
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/26/hello hexo/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/09/Jenkins搭建Android自动化打包/"/>
 
 
 
 
 
-  <title>Hexo 基本配置 | Android Blog</title>
+  <title>Jenkins搭建Android自动化打包 | Android Blog</title>
   
 
 
@@ -273,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/hello hexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/Jenkins搭建Android自动化打包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zstartw">
@@ -290,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo 基本配置</h1>
+          <h1 class="post-title" itemprop="name headline">Jenkins搭建Android自动化打包</h1>
         
 
         <div class="post-meta">
@@ -302,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T18:34:47+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T15:16:17+08:00">
+                2018-05-09
               </time>
             
 
@@ -362,30 +367,72 @@
       
 
       
-        <p><a href="https://hexo.io/" target="_blank" rel="noopener">官网Hexo</a><br><a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a><br><a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a><br><a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js官网</a></p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>Notes: Linux,Mac使用下面这个命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init zstart.github.io</span><br><span class="line">$ <span class="built_in">cd</span> zstart.github.io</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">或者</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">或者</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">或者</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>此时会在source/_posts目录下生成test.md文件，输入些许内容，然后保存.</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
-<li>修改_config.xml.</li>
+        <h3 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h3><ol>
+<li>安装Jenkins</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Android Blog</span><br><span class="line">subtitle:</span><br><span class="line">description:</span><br><span class="line">keywords: android</span><br><span class="line">author: zstartw</span><br><span class="line">language: zh-Hans</span><br><span class="line">timezone:</span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/zstartw/zstartw.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>官方下载安装</li>
+</ul>
+<p><a href="https://jenkins.io/" target="_blank" rel="noopener">https://jenkins.io/</a></p>
+<ul>
+<li>Jenkins启动/停止/重启</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 分别对应Jenkins的启动、停止、重启</span><br><span class="line">sudo service jenkins start/stop/restart</span><br><span class="line"># 设置Jenkins开机启动</span><br><span class="line">sudo chkconfig jenkins on</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>下载主题</li>
+<li>PHP+Apache</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/zstartw/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>坑：进行配置时，需要在冒号:后加一个英文空格</p>
+<p>这里是想搭建一个文件服务器,方便后面下载打包好apk,自带的Jenkins也可以下载存档的包,但是界面上显示不是很方便,所以就自己搭建了一个,使用下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br><span class="line">sudo apt-get install php libapache2-mod-php php-mcrypt</span><br></pre></td></tr></table></figure>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li>设置Jenkins的主目录</li>
+</ul>
+<p>Linux环境中，Jenkins主目录默认在/root/.jenkins</p>
+<p>设置JENKINS_HOME环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo vim /etc/profile</span><br></pre></td></tr></table></figure>
+<p>在文件最后面添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JENKINS_HOME=/home/自己的用户名/jenkins</span><br></pre></td></tr></table></figure></p>
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>使用第一个 “Install suggested plugins”</p>
+<h3 id="一些系统设置"><a href="#一些系统设置" class="headerlink" title="一些系统设置"></a>一些系统设置</h3><ul>
+<li>设置环境变量<br>进入系统管理-系统设置-全局属性,新建变量 ANDROID_HOME=/home/自己的用户名/android-sdk</li>
+<li>设置Build History输出格式<br>进入系统管理-全局安全配置-Markup Formatter,设置markup fromatter为Safe HTML,格式化Build History有用到</li>
+<li><p>设置JDK, Gradle<br>进入系统管理-全局工具配置-JDK,添加 java_1.8=/usr/lib/jvm/java-8-openjdk-amd64/<br>进入系统管理-全局工具配置-Gradle,添加 gradle_4.4=/home/自己的用户名/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4</p>
+<h3 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h3></li>
+<li><p>输入任务名称-自己的工程名</p>
+</li>
+<li>选择 “构建一个自由风格的软件项目”</li>
+</ul>
+<h3 id="配置工程"><a href="#配置工程" class="headerlink" title="配置工程"></a>配置工程</h3><ul>
+<li><p>参数化构建过程<br><img src="https://cloudinary.com/console/media_library/asset/image/upload/Screenshot_from_2018-05-09_17-12-42" alt=""></p>
+</li>
+<li><p>Git添加源代码</p>
+</li>
+</ul>
+<p>这里我使用 git ssh来导入代码,但是一直提示 “Permission denied”,后面直接使用 http,然后添加一下用户名和密码的方式就解决了</p>
+<ul>
+<li>构建</li>
+</ul>
+<p><img src="http://res.cloudinary.com/dwg5tdqbq/image/upload/c_scale,w_517/v1525857794/Screenshot_from_2018-05-09_17-23-00.png" alt=""></p>
+<ul>
+<li>归档文件</li>
+</ul>
+<p><img src="http://res.cloudinary.com/dwg5tdqbq/image/upload/c_scale,w_358/v1525857941/Screenshot_from_2018-05-09_17-25-09.png" alt=""></p>
+<h3 id="配置后台管理界面"><a href="#配置后台管理界面" class="headerlink" title="配置后台管理界面"></a>配置后台管理界面</h3><p>先看效果图</p>
+<p><img src="http://res.cloudinary.com/dwg5tdqbq/image/upload/c_scale,w_670/v1525858266/Screenshot_from_2018-05-09_17-30-22.png" alt=""></p>
+<ul>
+<li>配置路径</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure>
+<p>添加 Directory</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory /home/用户名/jenkins/workspace/工程名/archives/&gt;</span><br><span class="line">        Options Indexes FollowSymLinks MultiViews</span><br><span class="line">        AllowOverride None</span><br><span class="line">        Order allow,deny</span><br><span class="line">        allow from all</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+<p>重启apache2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改apache端口号</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/ports.conf</span><br></pre></td></tr></table></figure>
+<h3 id="清除所有的构建历史"><a href="#清除所有的构建历史" class="headerlink" title="清除所有的构建历史"></a>清除所有的构建历史</h3><p>进入  系统管理-脚本命令行, 复制下面代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def jobName = &quot;工程名字&quot;</span><br><span class="line">def job = Jenkins.instance.getItem(jobName)</span><br><span class="line">job.getBuilds().each &#123; it.delete() &#125;</span><br><span class="line">job.nextBuildNumber = 1</span><br><span class="line">job.save()</span><br></pre></td></tr></table></figure></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.cnblogs.com/yangxia-test/p/4367999.html" target="_blank" rel="noopener">1</a><br><a href="https://www.jianshu.com/p/915c1ae69144" target="_blank" rel="noopener">2</a><br><a href="https://www.jianshu.com/p/38b2e17ced73" target="_blank" rel="noopener">3</a></p>
 
       
     </div>
@@ -403,7 +450,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Jenkins/" rel="tag"># Jenkins</a>
           
         </div>
       
@@ -416,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/26/Gradle and Manifest/" rel="next" title="Gradle和Manifest">
-                <i class="fa fa-chevron-left"></i> Gradle和Manifest
+              <a href="/2018/04/27/识别应用程序安装/" rel="next" title="识别应用程序安装">
+                <i class="fa fa-chevron-left"></i> 识别应用程序安装
               </a>
             
           </div>
@@ -425,10 +472,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/27/Key Android Concepts/" rel="prev" title="Android一些概念">
-                Android一些概念 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -570,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装node-js"><span class="nav-number">1.</span> <span class="nav-text">安装node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建工程"><span class="nav-number">3.</span> <span class="nav-text">创建工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">4.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">5.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">6.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布文章"><span class="nav-number">7.</span> <span class="nav-text">发布文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">8.</span> <span class="nav-text">配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装环境"><span class="nav-number">1.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">3.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些系统设置"><span class="nav-number">4.</span> <span class="nav-text">一些系统设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建任务"><span class="nav-number">5.</span> <span class="nav-text">创建任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置工程"><span class="nav-number">6.</span> <span class="nav-text">配置工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置后台管理界面"><span class="nav-number">7.</span> <span class="nav-text">配置后台管理界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除所有的构建历史"><span class="nav-number">8.</span> <span class="nav-text">清除所有的构建历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
