@@ -270,6 +270,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/使用ConstraintLayout来构建UI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zstartw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Android Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/使用ConstraintLayout来构建UI/" itemprop="url">使用ConstraintLayout来构建UI</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T17:33:22+08:00">
+                2018-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/21/使用ConstraintLayout来构建UI/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/21/使用ConstraintLayout来构建UI/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>ConstraintLayout(约束布局)可以使用一个扁平的试图层次结构来创建复杂的布局,和RelativeLayout类似,但它比RelativeLayout更灵活，并且更易于与Android Studio的布局编辑器一起使用。</p>
+<p>ConstraintLayout可在与Android 2.3（API级别9）及更高版本兼容的API库中提供,本页面提供了在Android Studio 3.0或更高版本中使用ConstraintLayout构建布局的指南</p>
+<h3 id="Constraints-约束-介绍"><a href="#Constraints-约束-介绍" class="headerlink" title="Constraints(约束)介绍"></a>Constraints(约束)介绍</h3><p><b>要在ConstraintLayout中定义视图的位置，您必须为视图添加至少一个水平和垂直约束</b>。这个就会造成在设备上的看的效果不一样,每个约束表示与另一个视图，父布局或不可见guideline的连接或对齐,<br>每个约束定义视图沿着垂直或水平轴的位置;所以每个视图对于每个轴必须至少有一个约束，但通常更多是必要的</p>
+<p>点击布局右上角的Show Warnings and Errors,可以查看一些警告信息</p>
+<h3 id="ConstraintLayout添加到您的项目中"><a href="#ConstraintLayout添加到您的项目中" class="headerlink" title="ConstraintLayout添加到您的项目中"></a>ConstraintLayout添加到您的项目中</h3><ol>
+<li>确保您的模块级build.gradle文件中声明了maven.google.com存储库<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123;</span><br><span class="line">        url &apos;https://maven.google.com&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.在相同的build.gradle文件中将该库作为依赖项添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile &apos;com.android.support.constraint:constraint-layout:1.0.2&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://developer.android.com/training/constraint-layout/" target="_blank" rel="noopener">Developer Android</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/Jenkins搭建Android自动化打包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1770,7 +1933,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1792,7 +1955,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2117,7 +2280,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Jenkins搭建Android自动化打包");titles.push("识别应用程序安装");titles.push("Android一些概念");titles.push("Hexo 基本配置");titles.push("Gradle和Manifest");titles.push("RXJava");titles.push("关于设备的相关信息");titles.push("Java基础知识");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("使用ConstraintLayout来构建UI");titles.push("Jenkins搭建Android自动化打包");titles.push("识别应用程序安装");titles.push("Android一些概念");titles.push("Hexo 基本配置");titles.push("Gradle和Manifest");titles.push("RXJava");titles.push("关于设备的相关信息");titles.push("Java基础知识");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
