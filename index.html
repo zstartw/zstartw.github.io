@@ -270,6 +270,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/implement-api-区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zstartw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Android Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/05/implement-api-区别/" itemprop="url">implement api 区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-05T18:07:33+08:00">
+                2018-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Config/" itemprop="url" rel="index">
+                    <span itemprop="name">Config</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/05/implement-api-区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/05/implement-api-区别/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="api"><a href="#api" class="headerlink" title="api"></a>api</h3><p>可以完全替换之前的compile,和compile没有什么区别</p>
+<h3 id="implementation"><a href="#implementation" class="headerlink" title="implementation"></a>implementation</h3><p>使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开</p>
+<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><ul>
+<li>首先应该设置为implementation的，如果没有错，那就用implementation，如果有错，那么使用api指令。使用implementation会使编译速度有所增快。</li>
+<li>Module 中引用libs中的文件,要用api</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">api fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/Android-修改记录-一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -381,7 +540,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams();</span><br><span class="line">layoutParams.width = DisplayUtil.getScreenWidth(mContext) / 2;</span><br><span class="line">layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;</span><br></pre></td></tr></table></figure>
 <h3 id="aar-中的类找不到"><a href="#aar-中的类找不到" class="headerlink" title="aar  中的类找不到"></a>aar  中的类找不到</h3><p>现象:公司的app引用了一个第三方的库,新的需示是要更新这个库的版本,官方下载新的库覆盖上去,但是aar库没有生效<br>解决:找到第三方库对应的build.gradle,注释导入aar库的代码,再重新打开就OK</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">api(name: &apos;ui&apos;, ext: &apos;aar&apos;)</span><br><span class="line">api(name: &apos;monitoring&apos;, ext: &apos;aar&apos;)</span><br></pre></td></tr></table></figure>
-<p>###</p>
 
           
         
@@ -1875,168 +2033,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/关于设备的相关信息/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zstartw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Android Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/17/关于设备的相关信息/" itemprop="url">关于设备的相关信息</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T17:53:55+08:00">
-                2018-04-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/17/关于设备的相关信息/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/17/关于设备的相关信息/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="UUID"><a href="#UUID" class="headerlink" title="UUID"></a>UUID</h3><p>(Universally Unique Identifier)全局唯一标识符,是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的。<br>由以下几部分的组合：<br>当前日期和时间(UUID的第一个部分与时间有关，如果你在生成一个UUID之后，过几秒又生成一个UUID，则第一个部分不同，其余相同)<br>示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String id = UUID.randomUUID().toString();</span><br><span class="line"></span><br><span class="line">7bebb30f-fb61-429e-9022-2caf57f55efa</span><br></pre></td></tr></table></figure></p>
-<h3 id="IMEI"><a href="#IMEI" class="headerlink" title="IMEI"></a>IMEI</h3><p>国际移动设备识别码（International Mobile Equipment Identity，IMEI），即通常所说的手机序列号、手机“串号”，用于在移动电话网络中识别每一部独立的手机等行动通讯装置，相当于移动电话的身份证。序列号共有15位数字，前6位（TAC）是型号核准号码，代表手机类型。<br>接着2位（FAC）是最后装配号，代表产地。后6位（SNR）是串号，代表生产顺序号。最后1位（SP）一般为0，是检验码，备用。国际移动设备识别码一般贴于机身背面与外包装上，同时也存在于手机内存中，通过输入*#06#即可查询。</p>
-<p>在大部分终端设备中都可以通过拨号输入<em>#06#来查询。也可以使用AT命令查询，ATD</em>#06#或AT+CGSN。</p>
-<h3 id="MEID"><a href="#MEID" class="headerlink" title="MEID"></a>MEID</h3><p>移动设备识别码(Mobile Equipment IDentifier)是全球唯一的56bit CDMA制式移动终端标识号。标识号会被烧入终端里，并且不能被修改。<br>可用来对CDMA制式移动式设备进行身份识别和跟踪</p>
-<h3 id="ESN"><a href="#ESN" class="headerlink" title="ESN"></a>ESN</h3><p>电子序列号（英语：Electronic Serial Number，缩写：ESN），又称ESN码是美国联邦通信委员会规定的，每一台移动设备（例如移动电话、智能手机、平板电脑等）独有的参数，其长度为32位。早在1980年类比式移动电话系统发明时，就已经在使用。<br>1997年后，美国电信行业协会获取了ESN码的管理和授予权。目前ESN码一开始使用于AMPS和D-AMPS手机上，目前则于CDMA手机上最为常见。另一种常见的手机编码IMEI（国际移动设备辨识码）则最常使用在GSM制式的手机</p>
-<h3 id="DEVICE-ID"><a href="#DEVICE-ID" class="headerlink" title="DEVICE_ID"></a>DEVICE_ID</h3><p>设备的唯一Id,可能返回GSM下的IMEI,CDMA手机对应的MEID或者ESN</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * 获取IMIE，山寨机或模拟器可能为空</span><br><span class="line">    *</span><br><span class="line">    * @param context</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line">   @SuppressLint(&quot;MissingPermission&quot;)</span><br><span class="line">   public static String getIMIE(Context context) &#123;</span><br><span class="line">       String imie = null;</span><br><span class="line">       try &#123;</span><br><span class="line">           TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);</span><br><span class="line">           imie = tm.getDeviceId();</span><br><span class="line">       &#125; catch (Throwable e) &#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line">       return imie;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="GAID"><a href="#GAID" class="headerlink" title="GAID"></a>GAID</h3><p>Google广告ID(Google advertising ID)是 Google Play 服务针对广告服务提供的可由用户重置的唯一 ID。通过广告 ID，用户可以更好地掌控广告体验，开发者则可以借助这个简单的标准系统持续通过自己的应用获利。<br>广告 ID 可让用户重置自己的标识符，或者选择停用 Google Play 应用内的个性化广告（以前称为“针对用户兴趣投放的广告”）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static AdvertisingIdClient.Info getAdvertisingIdInfo (Context context)</span><br></pre></td></tr></table></figure>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://support.google.com/googleplay/android-developer/answer/6048248?hl=zh-Hans" target="_blank" rel="noopener">广告ID</a><br><a href="https://developer.android.com/training/articles/user-data-ids.html#working_with_advertising_ids" target="_blank" rel="noopener">唯一标识符最佳做法</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2087,7 +2083,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2434,7 +2430,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Android 修改记录(一)");titles.push("Git");titles.push("使用ConstraintLayout来构建UI");titles.push("Jenkins搭建Android自动化打包");titles.push("识别应用程序安装");titles.push("Android一些概念");titles.push("Hexo 基本配置");titles.push("Gradle和Manifest");titles.push("RXJava");titles.push("关于设备的相关信息");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("implement api 区别");titles.push("Android 修改记录(一)");titles.push("Git");titles.push("使用ConstraintLayout来构建UI");titles.push("Jenkins搭建Android自动化打包");titles.push("识别应用程序安装");titles.push("Android一些概念");titles.push("Hexo 基本配置");titles.push("Gradle和Manifest");titles.push("RXJava");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
