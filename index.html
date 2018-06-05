@@ -270,6 +270,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zstartw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Android Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/05/Git/" itemprop="url">Git</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-05T17:38:07+08:00">
+                2018-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/05/Git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/05/Git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Git-简史"><a href="#Git-简史" class="headerlink" title="Git 简史"></a>Git 简史</h3><p>Linux在 1991-2002年用的是BitKeeper,后面到2005年, BitKeeper 的商业公司同 Linux 内核开源社区的合作关系结束，他们收回了 Linux 内核社区免费使用 BitKeeper 的权力。<br>这就迫使 Linux 开源社区（特别是 Linux 的缔造者 Linus Torvalds）基于使用 BitKeeper 时的经验教训，开发出自己的版本系统 git</p>
+<p>Git是一个分布式版本控制系统（DVCS）</p>
+<h3 id="快照（Snapshots）与记录变更-Differences"><a href="#快照（Snapshots）与记录变更-Differences" class="headerlink" title="快照（Snapshots）与记录变更(Differences)"></a>快照（Snapshots）与记录变更(Differences)</h3><p>Git与SVN最大的差别在于它们如何处理数据：</p>
+<ul>
+<li>SVN等大多数版本控制系统存储的数据是一系列记录项目文件变更的文件</li>
+<li>Git存储的数据则更像是一个微型文件系统的一系列快照，即快照流</li>
+</ul>
+<p>每次提交或保存当前项目状态，Git都会生成一个当前所有文件状态的快照，并存储一个对该快照的引用；而且文件没有发生变化时</p>
+<h3 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h3><p>Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位<br>置</p>
+<ul>
+<li>当前使用仓库的 Git 目录中的 config 文件(就是 .git/config):针对该仓库</li>
+<li>~/.gitconfig 或 ~/.config/git/config 文件:只针对当前用户。 可以传递 –global 选项让 Git<br>读写此文件</li>
+<li>/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果使用带有 –system 选项的<br>git config 时,它会从此文件读写配置变量</li>
+</ul>
+<p>如果想要检查你的配置,可以使用 git config –list(-l) 命令来列出所有 Git 当时能找到的配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line">user.name=zhengwu</span><br><span class="line">user.email=zhengwu@globalegrow.com</span><br><span class="line">core.autocrlf=input</span><br></pre></td></tr></table></figure>
+<p>要想获得 config 命令的手册,执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git help config</span><br></pre></td></tr></table></figure>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git add LICENSE</span><br><span class="line">$ git commit -m &apos;initial project version&apos;</span><br><span class="line">$ git push orign master</span><br><span class="line">$ git clone https://github.com/libgit2/libgit2 // 支持https:// , git://或者SSH,比如 user@server:path/to/repo.git</span><br><span class="line">$ git status //检查当前文件状态</span><br></pre></td></tr></table></figure>
+<p>分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b hotfix//切换到hotfix分支</span><br><span class="line">$ git branch//查看当前分支</span><br><span class="line">$ git branch -d hotfix //删除分支</span><br></pre></td></tr></table></figure></p>
+<p>合并分支的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git merge hotfix</span><br></pre></td></tr></table></figure>
+<p>创建tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -a v1.0 -m &apos;my version&apos; //创建附注标签</span><br><span class="line">$ git show v1.0 //看到标签信息与对应的提交信息</span><br><span class="line">$ git tag v1.0-lw //创建轻量标签</span><br></pre></td></tr></table></figure></p>
+<p>后期打tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git log --pretty=oneline//查看日志</span><br><span class="line">$ git tag -a v1.2 9fceb02//指定提交的校验和(或部分校验和)</span><br></pre></td></tr></table></figure></p>
+<p>Note: 默认情况下,git push 命令并不会传送标签到远程仓库服务器上。 在创建完标签后你必须显式地推送标签到<br>      共享服务器上。 这个过程就像共享远程分支一样 - 你可以运行 git push origin [tagname]。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/使用ConstraintLayout来构建UI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -376,7 +531,7 @@
           
             <h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>ConstraintLayout(约束布局)可以使用一个扁平的试图层次结构来创建复杂的布局,和RelativeLayout类似,但它比RelativeLayout更灵活，并且更易于与Android Studio的布局编辑器一起使用。</p>
 <p>ConstraintLayout可在与Android 2.3（API级别9）及更高版本兼容的API库中提供,本页面提供了在Android Studio 3.0或更高版本中使用ConstraintLayout构建布局的指南</p>
-<h3 id="Constraints-约束-介绍"><a href="#Constraints-约束-介绍" class="headerlink" title="Constraints(约束)介绍"></a>Constraints(约束)介绍</h3><p><b>要在ConstraintLayout中定义视图的位置，您必须为视图添加至少一个水平和垂直约束</b>。这个就会造成在设备上的看的效果不一样,每个约束表示与另一个视图，父布局或不可见guideline的连接或对齐,<br>每个约束定义视图沿着垂直或水平轴的位置;所以每个视图对于每个轴必须至少有一个约束，但通常更多是必要的</p>
+<h3 id="Constraints-约束-介绍"><a href="#Constraints-约束-介绍" class="headerlink" title="Constraints(约束)介绍"></a>Constraints(约束)介绍</h3><p><b>要在ConstraintLayout中定义视图的位置，您必须为视图添加至少一个水平和垂直约束</b>。这个就会造成在设备上的看的效果不一样,每个约束表示与另一个视图，父布局或不可见guideline的连接或对齐,每个约束定义视图沿着垂直或水平轴的位置;所以每个视图对于每个轴必须至少有一个约束，但通常更多是必要的</p>
 <p>点击布局右上角的Show Warnings and Errors,可以查看一些警告信息</p>
 <h3 id="ConstraintLayout添加到您的项目中"><a href="#ConstraintLayout添加到您的项目中" class="headerlink" title="ConstraintLayout添加到您的项目中"></a>ConstraintLayout添加到您的项目中</h3><ol>
 <li>确保您的模块级build.gradle文件中声明了maven.google.com存储库<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    maven &#123;</span><br><span class="line">        url &apos;https://maven.google.com&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1933,7 +2088,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1955,7 +2110,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2280,7 +2435,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("使用ConstraintLayout来构建UI");titles.push("Jenkins搭建Android自动化打包");titles.push("识别应用程序安装");titles.push("Android一些概念");titles.push("Hexo 基本配置");titles.push("Gradle和Manifest");titles.push("RXJava");titles.push("关于设备的相关信息");titles.push("Java基础知识");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Git");titles.push("使用ConstraintLayout来构建UI");titles.push("Jenkins搭建Android自动化打包");titles.push("识别应用程序安装");titles.push("Android一些概念");titles.push("Hexo 基本配置");titles.push("Gradle和Manifest");titles.push("RXJava");titles.push("关于设备的相关信息");titles.push("Java基础知识");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
