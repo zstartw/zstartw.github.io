@@ -270,6 +270,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/Android-修改记录-一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zstartw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Android Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/05/Android-修改记录-一/" itemprop="url">Android 修改记录(一)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-05T17:46:57+08:00">
+                2018-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/05/Android-修改记录-一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/06/05/Android-修改记录-一/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="在低版本的手机上会出现GridLayout设置LayoutParams异常"><a href="#在低版本的手机上会出现GridLayout设置LayoutParams异常" class="headerlink" title="在低版本的手机上会出现GridLayout设置LayoutParams异常"></a>在低版本的手机上会出现GridLayout设置LayoutParams异常</h3><p>问题代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(DisplayUtil.getScreenWidth(mContext) / 2,</span><br><span class="line">                                       GridLayout.LayoutParams.WRAP_CONTENT);</span><br></pre></td></tr></table></figure>
+<p>异常如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">java.lang.ClassCastException: android.view.ViewGroup$LayoutParams cannot be cast to android.widget.GridLayout$LayoutParams</span><br><span class="line">        at android.widget.GridLayout.getLayoutParams1(GridLayout.java:729)</span><br><span class="line">        at android.widget.GridLayout.validateLayoutParams(GridLayout.java:663)</span><br><span class="line">        at android.widget.GridLayout.getLayoutParams(GridLayout.java:734)</span><br><span class="line">        at android.widget.GridLayout.measureChildrenWithMargins(GridLayout.java:866)</span><br><span class="line">        at android.widget.GridLayout.onMeasure(GridLayout.java:894)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.LinearLayout.measureChildBeforeLayout(LinearLayout.java:1369)</span><br><span class="line">        at android.widget.LinearLayout.measureVertical(LinearLayout.java:660)</span><br><span class="line">        at android.widget.LinearLayout.onMeasure(LinearLayout.java:553)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.LinearLayout.measureChildBeforeLayout(LinearLayout.java:1369)</span><br><span class="line">        at android.widget.LinearLayout.measureVertical(LinearLayout.java:660)</span><br><span class="line">        at android.widget.LinearLayout.onMeasure(LinearLayout.java:553)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.support.v4.widget.NestedScrollView.measureChildWithMargins(NestedScrollView.java:1449)</span><br><span class="line">        at android.widget.FrameLayout.onMeasure(FrameLayout.java:293)</span><br><span class="line">        at android.support.v4.widget.NestedScrollView.onMeasure(NestedScrollView.java:515)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.FrameLayout.onMeasure(FrameLayout.java:293)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.support.v4.widget.SwipeRefreshLayout.onMeasure(SwipeRefreshLayout.java:627)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.LinearLayout.measureChildBeforeLayout(LinearLayout.java:1369)</span><br><span class="line">        at android.widget.LinearLayout.measureVertical(LinearLayout.java:660)</span><br><span class="line">        at android.widget.LinearLayout.onMeasure(LinearLayout.java:553)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.FrameLayout.onMeasure(FrameLayout.java:293)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.widget.LinearLayout.measureVertical(LinearLayout.java:812)</span><br><span class="line">        at android.widget.LinearLayout.onMeasure(LinearLayout.java:553)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.FrameLayout.onMeasure(FrameLayout.java:293)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.FrameLayout.onMeasure(FrameLayout.java:293)</span><br><span class="line">        at android.support.v7.widget.ContentFrameLayout.onMeasure(ContentFrameLayout.java:139)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.LinearLayout.measureChildBeforeLayout(LinearLayout.java:1369)</span><br><span class="line">        at android.widget.LinearLayout.measureVertical(LinearLayout.java:660)</span><br><span class="line">        at android.widget.LinearLayout.onMeasure(LinearLayout.java:553)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.FrameLayout.onMeasure(FrameLayout.java:293)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.LinearLayout.measureChildBeforeLayout(LinearLayout.java:1369)</span><br><span class="line">        at android.widget.LinearLayout.measureVertical(LinearLayout.java:660)</span><br><span class="line">        at android.widget.LinearLayout.onMeasure(LinearLayout.java:553)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:4698)</span><br><span class="line">        at android.widget.FrameLayout.onMeasure(FrameLayout.java:293)</span><br><span class="line">        at com.android.internal.policy.impl.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2092)</span><br><span class="line">        at android.view.View.measure(View.java:12723)</span><br><span class="line">        at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1064)</span><br><span class="line">        at android.view.ViewRootImpl.handleMessage(ViewRootImpl.java:2442)</span><br><span class="line">        at android.os.Handler.dispatchMessage(Handler.java:99)</span><br><span class="line">        at android.os.Looper.loop(Looper.java:137)</span><br><span class="line">        at android.app.ActivityThread.main(ActivityThread.java:4424)</span><br><span class="line">        at java.lang.reflect.Method.invokeNative(Native Method)</span><br><span class="line">        at java.lang.reflect.Method.invoke(Method.java:511)</span><br><span class="line">        at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:784)</span><br><span class="line">        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:551)</span><br><span class="line">        at dalvik.system.NativeStart.main(Native Method)</span><br></pre></td></tr></table></figure></p>
+<p>解决:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams();</span><br><span class="line">layoutParams.width = DisplayUtil.getScreenWidth(mContext) / 2;</span><br><span class="line">layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;</span><br></pre></td></tr></table></figure>
+<h3 id="aar-中的类找不到"><a href="#aar-中的类找不到" class="headerlink" title="aar  中的类找不到"></a>aar  中的类找不到</h3><p>现象:公司的app引用了一个第三方的库,新的需示是要更新这个库的版本,官方下载新的库覆盖上去,但是aar库没有生效<br>解决:找到第三方库对应的build.gradle,注释导入aar库的代码,再重新打开就OK</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">api(name: &apos;ui&apos;, ext: &apos;aar&apos;)</span><br><span class="line">api(name: &apos;monitoring&apos;, ext: &apos;aar&apos;)</span><br></pre></td></tr></table></figure>
+<p>###</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/Git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1877,174 +2037,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/key Java Concepts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zstartw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Android Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/17/key Java Concepts/" itemprop="url">Java基础知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T11:49:10+08:00">
-                2018-04-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/17/key Java Concepts/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/04/17/key Java Concepts/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>面向对象的程序是从对象构建的. 类是用于创建对象的“模板”. 该类定义对象可以包含的值以及可以对该对象执行的操作.<br>编译之后,一个类被存储在文件系统中的’（class-name）.class’文件中.</p>
-<p>当我们要从该类创建第一个对象时,或者当我们调用其一个静态函数时,该类被加载到内存中.<br>在类加载期间,所有类的静态变量都被初始化. 还将执行在static { … }块中定义的操作. 一旦加载了一个类,它将保留在内存中,类静态变量将不再被初始化.<br>将类加载到内存中后,可以从该类创建对象. 当一个对象创建时,它的成员变量被初始化,但静态变量不是.<br>当没有更多的引用对象时,垃圾收集器会销毁对象并释放其内存,以便可以重用内存来保存新的对象.</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>方法是我们如何与对象进行通信. 当我们调用或调用方法时,我们要求对象执行一个任务.<br>我们可以说方法实现对象的行为. 对于每种方法,我们需要给出一个名称,我们需要定义它的输入参数,我们需要定义它的返回类型.<br>我们还需要设置其可见性 （私人,受保护或公开）. 如果该方法抛出一个被检查的异常,那么它也需要被声明. 它被称为方法定义 . 方法定义的语法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MyClass &#123;</span><br><span class="line"> ...</span><br><span class="line"> public ReturnType methodName （ ParamOneType parameter1 , ParamTwoType parameter2 ） &#123;</span><br><span class="line">  ...</span><br><span class="line"> return returnType ;</span><br><span class="line"> &#125;</span><br><span class="line"> ...</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>可以将任何基本数据类型或引用数据类型传递给一种方法</p>
-<ul>
-<li>基本类型按值传递:这意味着一旦传入了基本类型,方法中的值和源变量之间就没有更多的连接：</li>
-<li>对象类型按引用传递: 方法中的值和源变量之是同一个引用</li>
-</ul>
-<p>Java SE 5.0为具有可变参数列表的方法添加了句法支持,这简化了需要可变数量参数的方法的类型安全使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void drawPolygon （ Point ... points ） &#123;</span><br><span class="line"></span><br><span class="line">   // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>任何计算机的CPU都被设计为在任何给定时间执行一个任务,但是我们并行运行多个应用程序,并且一切都以完美的一致性运行.<br>这不仅仅是因为CPU在执行计算时速度非常快,这是因为CPU使用了一个聪明的设备,将时间分成各种任务.<br>在计算机上调用的每个应用程序或任务都以进程的形式与CPU关联. 因此,CPU管理各种进程,并在每个进程之间来回跳转,从而给予其一小部分时间和处理能力.<br> 这种情况发生得非常快,以至于正在运行的计算机用户同时运行进程的错觉. CPU在进程之间划分时间的这种功能称为多任务 .</p>
-<p>所以,如果我们在计算机上运行一个Java应用程序,我们正在有效地创建一个CPU,CPU占用CPU时间的一小部分.<br>在Java语法中,这个主进程被称为守护程序进程或守护程序线程 . 但是,Java走得更远一些. 它允许程序员将这个守护进程线程分成几个同时执行的多个线程（就像一个CPU）,因此为Java应用程序提供了一个更精细的多任务处理功能,称为多线程 .</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2088,7 +2087,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2110,7 +2109,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2435,7 +2434,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Git");titles.push("使用ConstraintLayout来构建UI");titles.push("Jenkins搭建Android自动化打包");titles.push("识别应用程序安装");titles.push("Android一些概念");titles.push("Hexo 基本配置");titles.push("Gradle和Manifest");titles.push("RXJava");titles.push("关于设备的相关信息");titles.push("Java基础知识");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Android 修改记录(一)");titles.push("Git");titles.push("使用ConstraintLayout来构建UI");titles.push("Jenkins搭建Android自动化打包");titles.push("识别应用程序安装");titles.push("Android一些概念");titles.push("Hexo 基本配置");titles.push("Gradle和Manifest");titles.push("RXJava");titles.push("关于设备的相关信息");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
