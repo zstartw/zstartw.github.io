@@ -270,6 +270,398 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/Gradle and Manifest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zstartw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Android Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/Gradle and Manifest/" itemprop="url">Gradle和Manifest</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T18:34:39+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Config/" itemprop="url" rel="index">
+                    <span itemprop="name">Config</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/26/Gradle and Manifest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/26/Gradle and Manifest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Gradle是什么"><a href="#Gradle是什么" class="headerlink" title="Gradle是什么"></a>Gradle是什么</h3><p>Gradle是用于构建软件的软件,也称为“构建自动化软件”或“构建系统”.<br>您可能在其他环境中使用其他构建系统,例如make（C / C ++）,rake（Ruby）,Ant（Java）,Maven（Java）</p>
+<p>这些工具通过您教授他们的内在功能和规则知道 - 如何确定需要创建的内容（例如,基于文件更改）以及如何创建它们. 构建系统不直接编译,链接,打包等应用程序,而是指示单独的编译器,链接器和打包程序来执行此操作.</p>
+<p>Gradle使用构建在Groovy上面的域专用语言（DSL）完成这些任务</p>
+<h3 id="Groovy-是什么"><a href="#Groovy-是什么" class="headerlink" title="Groovy 是什么"></a>Groovy 是什么</h3><p>有许多编程语言被设计为在Java VM之上运行,其中一些,如JRuby和Jython,分别是其他常用编程语言（Ruby和Python）的实现,<br>一种语言只对应一种,而Groovy是其中之一</p>
+<p>Groovy脚本看起来有点像Java和Ruby的混搭.与Java一样,Groovy支持</p>
+<ul>
+<li>使用class关键字定义类</li>
+<li>使用extends创建子类</li>
+<li>使用导入从外部JAR导入类</li>
+<li>使用大括号定义方法体（{和}）</li>
+<li>对象是通过新的操作符创建的</li>
+</ul>
+<p>和Ruby一样</p>
+<p>语句可以是类的一部分,也可以简单地写成一种强制性的风格,如脚本语言<br>不输入参数和局部变量</p>
+<p>Groovy是一种解释型语言,如Ruby和Java不同. Groovy脚本通过执行groovy命令运行,将脚本传递给它来运行.<br>但是,Groovy运行时是一个Java JAR,需要一个JVM才能运行.<br>Groovy的优势之一是创建一个域专用语言（或DSL）. 例如,Gradle是用于进行软件构建的Groovy DSL.<br>特定于Gradle的能力似乎是一流的语言结构,通常与Groovy内在的功能无法区分.<br>然而,Groovy DSL主要是声明式的,就像一个XML文件.<br>在某种程度上,我们获得了两个世界的最佳效果：XML风格的定义（通常使用较少的标点符号）,但具有“到达Groovy”的能力,并根据需要进行自定义脚本编制.</p>
+<h3 id="Android和Gradle关系"><a href="#Android和Gradle关系" class="headerlink" title="Android和Gradle关系"></a>Android和Gradle关系</h3><p>Google已经发布了用于Gradle的Android插件,这使得Gradle能够构建Android项目. Google还在Android Studio中使用Gradle和Gradle作为Android Studio后台的构建系统.</p>
+<h3 id="为什么使用"><a href="#为什么使用" class="headerlink" title="为什么使用"></a>为什么使用</h3><p>最初,当我们构建一个应用程序时,这些构建是使用Eclipse和Ant完成的. Eclipse是IDE,而Ant是命令行工具.<br>Eclipse不使用Ant构建Android项目,而是拥有自己的构建系统. 而且我们使用这些工具成功地构建了一百万个应用程序. 这些工具今天仍然可以工作,尽管Ant的支持正在快速消失.</p>
+<p>那么为什么要改变？ 有几个因素,包括：</p>
+<ul>
+<li>维护两个单独的构建系统（Ant和Eclipse的本地方法）变得耗时,随着Android Studio和另一个构建系统的出现,将会变得更加糟糕.<br>因此,Google希望基于Gradle,针对IDE和命令行方案的单一构建系统进行标准</li>
+<li>使用第三方库更方便</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><a href="https://gradle.org/install/" target="_blank" rel="noopener">Gradle下载页面</a>包含Gradle本身的ZIP存档的链接：二进制文件,源代码或两者.</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>有三部分组成</p>
+<ul>
+<li>批处理文件(gradlew.bat)和脚本代码(gradlew)</li>
+<li>用于批处理文件和脚本的jar包(gradle/wrapper)</li>
+<li>哪里下载gradle (gradle/wrapper/gradle-wrapper.properties)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#Wed Apr 10 15:27:10 PDT 2013</span><br><span class="line">distributionBase=GRADLE_USER_HOME</span><br><span class="line">distributionPath=wrapper/dists</span><br><span class="line">zipStoreBase=GRADLE_USER_HOME</span><br><span class="line">zipStorePath=wrapper/dists</span><br><span class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip</span><br></pre></td></tr></table></figure>
+<p>当您创建或导入项目时,或者如果您更改属性文件中引用的Gradle版本,Android Studio将下载distributionUrl属性指向的Gradle,<br>并将其安装到.gradle/ 在创建的项目目录下.该版本的Gradle将是Android Studio使用的版本.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/RXJava/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zstartw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Android Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/RXJava/" itemprop="url">RXJava</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T17:57:03+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/26/RXJava/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/26/RXJava/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>RxJava 在 GitHub 主页上的自我介绍是 “a library for composing asynchronous and event-based programs using observable sequences for the Java VM”（一个在Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）</p>
+<h3 id="RxJava和RxAndroid"><a href="#RxJava和RxAndroid" class="headerlink" title="RxJava和RxAndroid"></a>RxJava和RxAndroid</h3><p>RxAndroid 为RxJava添加了最小类，使得在Android应用程序中编写反应式组件变得简单而轻松。更具体地说，<br>它提供了一个Scheduler，用于调度主线程或任何给定的Looper</p>
+<h3 id="RxJava-的观察者模式"><a href="#RxJava-的观察者模式" class="headerlink" title="RxJava 的观察者模式"></a>RxJava 的观察者模式</h3><p>RxJava 有四个基本概念：</p>
+<ul>
+<li>Observable (可观察者，即被观察者)</li>
+<li>Observer (观察者)</li>
+<li>subscribe (订阅)</li>
+<li>事件</li>
+</ul>
+<p>Observable 和 Observer 通过 subscribe() 方法实现订阅关系，从而 Observable 可以在需要的时候发出事件来通知 Observer。</p>
+<p>与传统观察者模式不同， RxJava 的事件回调方法除了普通事件 onNext() （相当于 onClick() / onEvent()）之外，还定义了两个特殊的事件：onCompleted() 和 onError()。</p>
+<ul>
+<li>onCompleted(): 事件队列完结。RxJava 不仅把每个事件单独处理，还会把它们看做一个队列。RxJava 规定，当不会再有新的 onNext() 发出时，需要触发 onCompleted() 方法作为标志。<br>onError(): 事件队列异常。在事件处理过程中出异常时，onError() 会被触发，同时队列自动终止，不允许再有事件发出。</li>
+<li>在一个正确运行的事件序列中, onCompleted() 和 onError() 有且只有一个，并且是事件序列中的最后一个。需要注意的是，onCompleted() 和 onError() 二者也是互斥的，即在队列中调用了其中一个，就不应该再调用另一个。</li>
+</ul>
+<h3 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h3><ol>
+<li>创建 Observer(观察者)</li>
+</ol>
+<p>Observer 即观察者，它决定事件触发的时候将有怎样的行为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Observer&lt;String&gt; observer = new Observer&lt;String&gt;() &#123;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onSubscribe(Disposable d) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onNext(String s) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onError(Throwable e) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onComplete() &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
+<p>除了 Observer 接口之外，RxJava 还内置了一个实现了 Observer 的抽象类：Subscriber。 Subscriber 对 Observer 接口进行了一些扩展，但他们的基本使用方式是完全一样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Subscriber&lt;String&gt; subscriber = new Subscriber&lt;String&gt;() &#123;</span><br><span class="line"></span><br><span class="line">           @Override</span><br><span class="line">           public void onSubscribe(Subscription s) &#123;</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           @Override</span><br><span class="line">           public void onNext(String s) &#123;</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           @Override</span><br><span class="line">           public void onError(Throwable t) &#123;</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           @Override</span><br><span class="line">           public void onComplete() &#123;</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建 Observable(被观察者)</li>
+</ol>
+<p>Observable 即被观察者，它决定什么时候触发事件以及触发怎样的事件。 RxJava 使用 create() 方法来创建一个 Observable</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//被观察者</span><br><span class="line">Observable&lt;String&gt; observable = Observable.create(new ObservableOnSubscribe&lt;String&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void subscribe(ObservableEmitter&lt;String&gt; subscriber) throws Exception &#123;</span><br><span class="line">       subscriber.onNext(&quot;Hello&quot;);</span><br><span class="line">        subscriber.onNext(&quot;Hi&quot;);</span><br><span class="line">        subscriber.onNext(&quot;Aloha&quot;);</span><br><span class="line">        subscriber.onCompleted();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>可以看到，这里传入了一个 OnSubscribe 对象作为参数。OnSubscribe 会被存储在返回的 Observable 对象中，它的作用相当于一个计划表，<br>当 Observable 被订阅的时候，OnSubscribe 的 call() 方法会自动被调用，事件序列就会依照设定依次触发（对于上面的代码，就是观察者Subscriber 将会被调用三次 onNext() 和一次 onCompleted()）。<br>这样，由被观察者调用了观察者的回调方法，就实现了由被观察者向观察者的事件传递，即观察者模式。</p>
+<p>create() 方法是 RxJava 最基本的创造事件序列的方法。基于这个方法， RxJava 还提供了一些方法用来快捷创建事件队列</p>
+<ul>
+<li>just(T…): 将传入的参数依次发送出来。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Observable observable = Observable.just(&quot;Hello&quot;, &quot;Hi&quot;, &quot;Aloha&quot;);</span><br><span class="line">// 将会依次调用：</span><br><span class="line">// onNext(&quot;Hello&quot;);</span><br><span class="line">// onNext(&quot;Hi&quot;);</span><br><span class="line">// onNext(&quot;Aloha&quot;);</span><br><span class="line">// onCompleted();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>from(T[]) / from(Iterable&lt;? extends T&gt;) : 将传入的数组或 Iterable 拆分成具体对象后，依次发送出来。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String[] words = &#123;&quot;Hello&quot;, &quot;Hi&quot;, &quot;Aloha&quot;&#125;;</span><br><span class="line">Observable observable = Observable.from(words);</span><br><span class="line">// 将会依次调用：</span><br><span class="line">// onNext(&quot;Hello&quot;);</span><br><span class="line">// onNext(&quot;Hi&quot;);</span><br><span class="line">// onNext(&quot;Aloha&quot;);</span><br><span class="line">// onCompleted();</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Subscribe(订阅)</li>
+</ol>
+<p>创建了 Observable 和 Observer 之后，再用 subscribe() 方法将它们联结起来，整条链子就可以工作了。代码形式很简单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(observer);</span><br><span class="line">// 或者：</span><br><span class="line">observable.subscribe(subscriber);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> subscribe() 这个方法有点怪：它看起来是『observalbe 订阅了 observer / subscriber』<br>而不是『observer / subscriber 订阅了 observalbe』，这看起来就像『杂志订阅了读者』一样颠倒了对象关系</p>
+</blockquote>
+<p>这里我的理解是被观察者会有其他的一些操作,如下面代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;, &quot;five&quot;)</span><br><span class="line">               .subscribeOn(Schedulers.newThread())</span><br><span class="line">               .observeOn(AndroidSchedulers.mainThread())</span><br><span class="line">               .subscribe(observer);</span><br></pre></td></tr></table></figure>
+<p>这里如果把Observer 观察者放前面的话,就不符合流式 API 的设计</p>
+<h3 id="一些基类"><a href="#一些基类" class="headerlink" title="一些基类"></a>一些基类</h3><p>创建 Observable(被观察者)</p>
+<ul>
+<li>io.reactivex.Flowable: 0..N flows, supporting Reactive-Streams and backpressure</li>
+<li>io.reactivex.Observable: 0..N flows, no backpressure,</li>
+<li>io.reactivex.Single: a flow of exactly 1 item or an error,</li>
+<li>io.reactivex.Completable: a flow without items but only a completion or error signal,</li>
+<li>io.reactivex.Maybe: a flow with no items, exactly one item or an error.</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://github.com/ReactiveX/RxJava/wiki" target="_blank" rel="noopener">RxJava Wiki</a><br><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">扔物线</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/关于设备的相关信息/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -634,7 +1026,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +1037,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -656,7 +1048,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -981,7 +1373,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("关于设备的相关信息");titles.push("Java基础知识");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Gradle和Manifest");titles.push("RXJava");titles.push("关于设备的相关信息");titles.push("Java基础知识");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
