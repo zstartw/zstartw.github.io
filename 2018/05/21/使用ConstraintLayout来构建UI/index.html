@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Android Blog">
 <meta property="og:description" content="简单介绍ConstraintLayout(约束布局)可以使用一个扁平的试图层次结构来创建复杂的布局,和RelativeLayout类似,但它比RelativeLayout更灵活，并且更易于与Android Studio的布局编辑器一起使用。 ConstraintLayout可在与Android 2.3（API级别9）及更高版本兼容的API库中提供,本页面提供了在Android Studio 3.0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-09T09:30:52.265Z">
+<meta property="og:updated_time" content="2018-06-15T07:36:00.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ConstraintLayout来构建UI">
 <meta name="twitter:description" content="简单介绍ConstraintLayout(约束布局)可以使用一个扁平的试图层次结构来创建复杂的布局,和RelativeLayout类似,但它比RelativeLayout更灵活，并且更易于与Android Studio的布局编辑器一起使用。 ConstraintLayout可在与Android 2.3（API级别9）及更高版本兼容的API库中提供,本页面提供了在Android Studio 3.0">
@@ -389,6 +389,17 @@
 <p>2.在相同的build.gradle文件中将该库作为依赖项添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile &apos;com.android.support.constraint:constraint-layout:1.0.2&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="设置margin"><a href="#设置margin" class="headerlink" title="设置margin"></a>设置margin</h3><p>两个配合使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">android:layout_marginTop=&quot;@dimen/dimen_w_14&quot;</span><br><span class="line">app:layout_constraintTop_toTopOf=&quot;parent&quot;</span><br></pre></td></tr></table></figure></p>
+<h3 id="设置长宽比"><a href="#设置长宽比" class="headerlink" title="设置长宽比"></a>设置长宽比</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app:layout_constraintDimensionRatio=&quot;1:1&quot;</span><br><span class="line">app:layout_constraintDimensionRatio=&quot;W,1:1&quot;</span><br><span class="line">app:layout_constraintDimensionRatio=&quot;H,1:1&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="设置水平或垂直间隔比例"><a href="#设置水平或垂直间隔比例" class="headerlink" title="设置水平或垂直间隔比例"></a>设置水平或垂直间隔比例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app:layout_constraintHorizontal_bias=&quot;0.5&quot;</span><br><span class="line">app:layout_constraintHorizontal_bias=&quot;0.5&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="weight-属性的使用"><a href="#weight-属性的使用" class="headerlink" title="weight 属性的使用"></a>weight 属性的使用</h3><p>官方的一个解释:</p>
+<blockquote>
+<p>When the chain is set to either spread or spread inside,<br>you can fill the remaining space by setting one or more views to “match constraints” (0dp).<br>By default, the space is evenly distributed between each view that’s set to “match constraints,”<br>but you can assign a weight of importance to each view using the layout_constraintHorizontal_weight and layout_constraintVertical_weight attributes.<br> If you’re familiar with layout_weight in a linear layout, this works the same way. So the view with the highest weight value gets the most amount of space;<br>views that have the same weight get the same amount of space.</p>
+</blockquote>
+<h3 id="三种chainStyle-Spread-Spread-inside-Packed"><a href="#三种chainStyle-Spread-Spread-inside-Packed" class="headerlink" title="三种chainStyle Spread/Spread inside/Packed"></a>三种chainStyle Spread/Spread inside/Packed</h3><ul>
+<li>Spread: 视图均匀分布（在占边界之后）。这是默认设置。</li>
+<li>Spread inside:第一个和最后一个视图固定在链条两端的约束上，其余均匀分布</li>
+<li>Packed: 视图会贴在一起</li>
+</ul>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://developer.android.com/training/constraint-layout/" target="_blank" rel="noopener">Developer Android</a></p>
 
       
@@ -537,7 +548,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -548,7 +559,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -602,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单介绍"><span class="nav-number">1.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraints-约束-介绍"><span class="nav-number">2.</span> <span class="nav-text">Constraints(约束)介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstraintLayout添加到您的项目中"><span class="nav-number">3.</span> <span class="nav-text">ConstraintLayout添加到您的项目中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置margin"><span class="nav-number">4.</span> <span class="nav-text">设置margin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单介绍"><span class="nav-number">1.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraints-约束-介绍"><span class="nav-number">2.</span> <span class="nav-text">Constraints(约束)介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConstraintLayout添加到您的项目中"><span class="nav-number">3.</span> <span class="nav-text">ConstraintLayout添加到您的项目中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置margin"><span class="nav-number">4.</span> <span class="nav-text">设置margin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置长宽比"><span class="nav-number">5.</span> <span class="nav-text">设置长宽比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置水平或垂直间隔比例"><span class="nav-number">6.</span> <span class="nav-text">设置水平或垂直间隔比例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#weight-属性的使用"><span class="nav-number">7.</span> <span class="nav-text">weight 属性的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种chainStyle-Spread-Spread-inside-Packed"><span class="nav-number">8.</span> <span class="nav-text">三种chainStyle Spread/Spread inside/Packed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
